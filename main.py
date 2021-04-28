@@ -1,18 +1,9 @@
 
-from PyPDF2 import PdfFileWriter, PdfFileReader
 import PyPDF2
 from pdf2image import convert_from_path
 import cv2
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-try:
-    from PIL import Image
-except ImportError:
-    import Image
-import pytesseract
 import os
-from skimage import io
 
 
 
@@ -90,17 +81,5 @@ for p in photoslist:
             j = j + 1
 
 print("table saparation done")
-
-
-def replace_trash(unicode_string):
-     for i in range(0, len(unicode_string)):
-         try:
-             unicode_string[i].encode("ascii")
-         except:
-              #means it's non-ASCII
-              unicode_string=unicode_string[i].replace(" ") #replacing it with a single space
-     return unicode_string
-
-
 
 print("program completed")
